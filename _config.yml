@@ -112,15 +112,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Evelyn Ning"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  bio              : "**Coming SOON**"
+  location         : "Zhejiang, China"
+  email            : "xuyingn2@illinois.edu"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "xyingn2@illinois.edu"
+      # url: "xuyingn2@illinois.edu"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
