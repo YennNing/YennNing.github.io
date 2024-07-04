@@ -125,7 +125,7 @@
   display: table-cell;
   vertical-align: top;
   width: 600px;
-  height: 300px;
+  // height: 300px;
 
   @include breakpoint($large) {
     display: block;
@@ -134,10 +134,8 @@
   }
 
   img {
-    width: 100%; /* 使图片填充容器的宽度 */
-    height: 100%; /* 使图片填充容器的高度 */
-    border-radius: 0%; /* 设置边角圆角半径，保持长方形外观 */
-
+    max-width: 175px;
+    border-radius: 50%;
 
     @include breakpoint($large) {
       padding: 5px;
