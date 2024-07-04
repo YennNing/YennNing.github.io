@@ -1,6 +1,11 @@
 .author__avatar {
-    width: 1600px;  /* 设置头像的宽度 */
-    height: 1600px;  /* 设置头像的高度 */
-    border-radius: 5%;  /* 设置边角圆角半径，保持长方形外观 */
-    object-fit: cover;  /* 确保头像填满容器 */
+    width: 200px;  /* 设置容器的宽度 */
+    height: 300px;  /* 设置容器的高度 */
+}
+
+.author__avatar-img {
+    width: 100%;  /* 使图片填充容器的宽度 */
+    height: 100%;  /* 使图片填充容器的高度 */
+    border-radius: 20%;  /* 设置图片的边角圆角半径 */
+    object-fit: cover;  /* 确保图片填满容器 */
 }
