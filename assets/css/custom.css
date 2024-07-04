@@ -1,6 +1,6 @@
 .author__avatar {
-    width: 600px;  /* 设置头像的宽度 */
-    height: 600px;  /* 设置头像的高度 */
+    width: 1600px;  /* 设置头像的宽度 */
+    height: 1600px;  /* 设置头像的高度 */
     border-radius: 5%;  /* 设置边角圆角半径，保持长方形外观 */
     object-fit: cover;  /* 确保头像填满容器 */
 }
