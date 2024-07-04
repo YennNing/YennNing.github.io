@@ -124,7 +124,7 @@
 .author__avatar {
   display: table-cell;
   vertical-align: top;
-  width: 200px;
+  width: 600px;
   height: 300px;
 
   @include breakpoint($large) {
@@ -136,7 +136,7 @@
   img {
     width: 100%; /* 使图片填充容器的宽度 */
     height: 100%; /* 使图片填充容器的高度 */
-    border-radius: 10%; /* 设置边角圆角半径，保持长方形外观 */
+    border-radius: 0%; /* 设置边角圆角半径，保持长方形外观 */
 
 
     @include breakpoint($large) {
