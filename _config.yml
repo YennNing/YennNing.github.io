@@ -191,9 +191,6 @@ exclude:
   - tmp
   - /docs # ignore Minimal Mistakes /docs
   - /test # ignore Minimal Mistakes /test
-assets:
-  css:
-    - /assets/css/custom.css
 keep_files:
   - .git
   - .svn
