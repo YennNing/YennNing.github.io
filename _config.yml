@@ -118,13 +118,13 @@ author:
   location         : #"Zhejiang, China"
   email            : "xuyingn2@illinois.edu"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "xuyingn2@illinois.edu"
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope-square"
+    #   url: "xuyingn2@illinois.edu"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
-    - label: "GoogleScholar"
+    - label: "Google-Scholar"
       icon: "fa-brands fa-google-scholar"
       url: "https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en"
     - label: "Facebook"
@@ -133,9 +133,9 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/YennNing"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
 
 # Site Footer
 footer:
