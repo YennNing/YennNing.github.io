@@ -20,8 +20,9 @@
   <style>
     :root {
       --primary: #1a2a3a;
-      --accent: #2c5282;
-      --accent-light: #ebf2fa;
+      --accent: #5f8fbe;
+      --accent-light: #eef5fb;
+      --accent-soft: #7ea6cd;
       --text: #2d3748;
       --text-light: #718096;
       --border: #e2e8f0;
@@ -135,8 +136,8 @@
     }
 
     .hero-photo img {
-      width: 240px;
-      height: 300px;
+      width: 270px;
+      height: 340px;
       border-radius: 14px;
       object-fit: cover;
       border: 3px solid var(--border);
@@ -168,7 +169,8 @@
     .timeline-detail a,
     .news-text a,
     .pub-link-inline,
-    .service-text a {
+    .service-text a,
+    .hero-bio a {
       color: var(--accent);
       text-decoration: none;
       font-weight: 500;
@@ -178,8 +180,14 @@
     .timeline-detail a:hover,
     .news-text a:hover,
     .pub-link-inline:hover,
-    .service-text a:hover {
+    .service-text a:hover,
+    .hero-bio a:hover {
       text-decoration: underline;
+    }
+
+    strong {
+      color: var(--accent-soft);
+      font-weight: 600;
     }
 
     .hero-bio {
@@ -529,8 +537,9 @@
 
     .awards-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 14px;
+      max-width: 560px;
     }
 
     .award-item {
@@ -678,8 +687,8 @@
       .timeline-item, .news-item { align-items: flex-start; }
       .gallery-grid { grid-template-columns: 1fr; }
       .hero-photo img {
-        width: 220px;
-        height: 280px;
+        width: 240px;
+        height: 300px;
       }
     }
   </style>
@@ -739,7 +748,7 @@
         <p>
           Prior to this, I received my B.Eng. in Artificial Intelligence from
           <a href="https://en.xjtu.edu.cn/">Xi'an Jiaotong University</a>, where I was enrolled in the
-          <strong>Honors Youth Program</strong> and the <strong>Artificial Intelligence Experimental Class</strong>.
+          Honors Youth Program at the age of 15 and the Artificial Intelligence Experimental Class</a>.
           I also spent time as a visiting student at <a href="https://www.columbia.edu/">Columbia University</a> in 2022.
           I had the privilege of working with <a href="https://scholar.google.com/citations?user=iqMe3p8AAAAJ&hl=zh-CN">Prof. Nanning Zheng</a> and
           <a href="https://scholar.google.com/citations?user=0uEzYQYAAAAJ&hl=zh-CN">Prof. Qinghua Zheng</a> on research in machine learning and recommender systems.
@@ -871,9 +880,6 @@
       </div>
       <div class="award-item">
         <span class="award-title">Outstanding Student Award</span>
-      </div>
-      <div class="award-item">
-        <span class="award-title">Best Project Prize</span>
       </div>
       <div class="award-item">
         <span class="award-title">MEGVII Scholarship</span>
