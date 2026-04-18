@@ -1,252 +1,988 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Xuying Ning</title>
-    <meta name="description" content="Xuying Ning's personal website. M.S. in Computer Science at UIUC, working at the intersection of multimodal large language models and graph foundation models.">
-    <meta name="author" content="Xuying Ning">
-    <meta property="og:site_name" content="Xuying Ning">
-    <meta property="og:title" content="Xuying Ning">
-    <meta property="og:description" content="Xuying Ning's personal website. M.S. in Computer Science at UIUC, working at the intersection of multimodal large language models and graph foundation models.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://xuyingning.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Xuying Ning">
-    <meta name="twitter:description" content="Xuying Ning's personal website. M.S. in Computer Science at UIUC, working at the intersection of multimodal large language models and graph foundation models.">
-    <link rel="canonical" href="https://xuyingning.com">
-    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css">
-  </head>
-  <body>
-    <div class="page-shell">
-      <aside class="sidebar">
-        <div class="sidebar-inner">
-          <a class="brand" href="#top">Xuying Ning</a>
-          <p class="sidebar-note">
-            M.S. in Computer Science at UIUC, continuing to the Ph.D. track, working on multimodal LLMs, graph learning, recommendation systems, and agentic search.
-          </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xuying Ning</title>
+  <meta name="description" content="Xuying Ning's personal website. M.S. in Computer Science at UIUC, working on multimodal large language models, graph foundation models, recommendation systems, and agentic search.">
+  <meta name="author" content="Xuying Ning">
+  <meta property="og:title" content="Xuying Ning">
+  <meta property="og:description" content="M.S. in Computer Science at UIUC, working on multimodal large language models, graph foundation models, recommendation systems, and agentic search.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xuyingning.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Xuying Ning">
+  <meta name="twitter:description" content="M.S. in Computer Science at UIUC, working on multimodal large language models, graph foundation models, recommendation systems, and agentic search.">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1a2a3a;
+      --accent: #2c5282;
+      --accent-light: #ebf2fa;
+      --text: #2d3748;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --bg-alt: #f7fafc;
+      --highlight: #c53030;
+      --gold: #b7791f;
+    }
 
-          <div class="avatar-card" aria-hidden="true">
-            <div class="avatar-monogram">XN</div>
-            <div class="avatar-grid"></div>
-          </div>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-          <nav class="sidebar-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#updates">What's New</a>
-            <a href="#work">Selected Work</a>
-            <a href="#explore">Explore</a>
-            <a href="#contact">Contact</a>
-          </nav>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      background: var(--bg);
+      padding-left: 260px;
+    }
 
-          <div class="sidebar-links">
-            <a href="mailto:xuyingn2@illinois.edu">Email</a>
-            <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">CV</a>
-            <a href="https://xuyingning.com">Website</a>
-            <a href="#work">Selected Papers</a>
-            <a href="#contact">Contact</a>
+    nav {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 260px;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      border-right: 1px solid var(--border);
+      padding: 32px 24px;
+    }
+
+    nav .nav-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 28px;
+    }
+
+    nav .nav-name {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: opacity 0.2s;
+      line-height: 1.1;
+    }
+
+    nav .nav-name:hover { opacity: 0.7; }
+
+    .nav-description {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      width: 100%;
+    }
+
+    nav .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+      position: relative;
+      margin-left: 0;
+    }
+
+    nav .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav .nav-links a:hover::after,
+    nav .nav-links a.active::after {
+      width: 100%;
+    }
+
+    nav .nav-links a:hover,
+    nav .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 48px 0 40px;
+    }
+
+    .hero {
+      padding: 60px 0 48px;
+      display: flex;
+      gap: 56px;
+      align-items: flex-start;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 240px;
+      height: 300px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .hero-photo img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(44, 82, 130, 0.15);
+    }
+
+    .hero-info h1 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-info .subtitle {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    .hero-info .subtitle a,
+    .timeline-detail a,
+    .news-text a,
+    .pub-link-inline,
+    .service-text a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero-info .subtitle a:hover,
+    .timeline-detail a:hover,
+    .news-text a:hover,
+    .pub-link-inline:hover,
+    .service-text a:hover {
+      text-decoration: underline;
+    }
+
+    .hero-bio {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .hero-links a:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.25);
+    }
+
+    .hero-note {
+      display: inline-block;
+      background: linear-gradient(135deg, #fff5f5, #fed7d7);
+      color: var(--highlight);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
+      border-left: 3px solid var(--highlight);
+    }
+
+    .research-interests {
+      padding: 0 0 12px;
+    }
+
+    .research-interests ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+    }
+
+    .research-interests li {
+      font-size: 15px;
+      color: var(--text);
+      padding: 10px 16px;
+      background: var(--bg-alt);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      line-height: 1.5;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .research-interests li:hover {
+      transform: translateX(4px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .research-interests li strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    section {
+      padding: 48px 0 0;
+    }
+
+    .section-title {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      padding: 20px 12px;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+      transition: background 0.2s ease;
+      border-radius: 8px;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-item:hover {
+      background: var(--bg-alt);
+    }
+
+    .timeline-logo {
+      flex-shrink: 0;
+      width: 84px;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    #education .timeline-logo {
+      width: 64px;
+      height: 64px;
+      font-size: 22px;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-content h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+
+    .timeline-date {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .timeline-detail {
+      font-size: 14.5px;
+      color: var(--text);
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+
+    .news-container {
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 8px;
+    }
+
+    .news-container::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .news-container::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 20px;
+      padding: 10px 8px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 15px;
+      border-radius: 4px;
+      transition: background 0.2s ease;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item:hover {
+      background: var(--bg-alt);
+    }
+
+    .news-date {
+      flex-shrink: 0;
+      width: 90px;
+      font-weight: 600;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .news-text {
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .pub-note {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .pub-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .pub-section-header {
+      list-style: none;
+      font-weight: 600;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      padding: 28px 12px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub-item {
+      padding: 18px 12px;
+      border-bottom: 1px solid #f0f0f0;
+      border-radius: 6px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
+    }
+
+    .pub-item:hover {
+      background: var(--bg-alt);
+      transform: translateX(3px);
+    }
+
+    .pub-title {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 16px;
+      line-height: 1.5;
+      display: inline;
+    }
+
+    .pub-authors {
+      font-size: 14.5px;
+      color: var(--text-light);
+      margin: 4px 0;
+      line-height: 1.6;
+    }
+
+    .pub-authors .me {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: var(--accent);
+      text-underline-offset: 2px;
+    }
+
+    .pub-venue {
+      font-size: 14.5px;
+      color: var(--text);
+      margin: 4px 0 8px;
+    }
+
+    .pub-venue .oral {
+      color: var(--highlight);
+      font-weight: 700;
+    }
+
+    .pub-venue .under-review {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      border-radius: 14px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .pub-link:hover {
+      background: var(--accent);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(44, 82, 130, 0.2);
+    }
+
+    .pub-tags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 10px;
+      letter-spacing: 0.2px;
+    }
+
+    .tag-llm { background: #fef9e7; color: #7d6608; }
+    .tag-multimodal { background: #f0e6ff; color: #6c3483; }
+    .tag-graph { background: #e8f4fd; color: #1a5276; }
+    .tag-rec { background: #e8f8f5; color: #1e8449; }
+    .tag-agent { background: #fde8e8; color: #922b21; }
+    .tag-finance { background: #f2f3f4; color: #566573; }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .award-item {
+      padding: 14px 18px;
+      background: var(--bg-alt);
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      border-left: 3px solid var(--accent);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .award-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .service-text {
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .service-text strong {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 48px 0 32px;
+      color: var(--text-light);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(44, 82, 130, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      body { padding-left: 0; }
+      .container { padding: 0 20px; }
+      .hero { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
+      .hero-info h1 { font-size: 32px; }
+      .hero-links { justify-content: center; }
+      .research-interests ul { grid-template-columns: 1fr; }
+      .awards-grid { grid-template-columns: 1fr; }
+      nav {
+        position: static;
+        width: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        padding: 18px 16px;
+      }
+      nav .nav-inner {
+        gap: 14px;
+      }
+      .nav-description {
+        padding-bottom: 12px;
+      }
+      nav .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+      }
+      nav .nav-links a { font-size: 13px; }
+      .timeline-item, .news-item { align-items: flex-start; }
+      .hero-photo img {
+        width: 220px;
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Xuying Ning</a>
+    <div class="nav-description">
+      UIUC CS M.S. student continuing to the Ph.D. track. I work on multimodal LLMs, graph foundation models, recommendation, and agentic search.
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <section class="hero" id="about">
+    <div class="hero-photo" data-aos="fade-right" data-aos-duration="800">
+      <img src="images/xuying2.JPG" alt="Xuying Ning">
+    </div>
+    <div class="hero-info" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+      <h1>Xuying Ning</h1>
+      <div class="subtitle">
+        M.S. in Computer Science, continuing to the Ph.D. track &middot;
+        <a href="https://cs.illinois.edu/">University of Illinois Urbana-Champaign</a><br>
+        Advised by <a href="https://www.hejingrui.org/">Prof. Jingrui He</a><br>
+        Previous B.Eng. (Honors) in Artificial Intelligence from Xi'an Jiaotong University, advised by Prof. Nanning Zheng
+      </div>
+      <p class="hero-bio">
+        My research lies at the intersection of <strong>multimodal large language models</strong> and
+        <strong>graph foundation models</strong>, with applications in <strong>recommendation systems</strong>
+        and <strong>agentic search</strong>. I am interested in building structured, effective, and interpretable
+        learning systems that work well in real-world multimodal settings.
+      </p>
+      <div class="hero-links">
+        <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
+        <a href="mailto:xuyingn2@illinois.edu"><i class="fas fa-envelope"></i> Email</a>
+        <a href="tel:+14479026907"><i class="fas fa-phone"></i> Phone</a>
+        <a href="https://xuyingning.com"><i class="fas fa-globe"></i> Website</a>
+      </div>
+      <div class="hero-note">
+        Siebel Scholar (Class of 2026) &middot; UIUC GPA 4.0/4.0
+      </div>
+    </div>
+  </section>
+
+  <div class="research-interests" data-aos="fade-up" data-aos-duration="600">
+    <ul>
+      <li><strong>Multimodal Reasoning</strong>: structured learning for image-text understanding and generation</li>
+      <li><strong>Graph Foundation Models</strong>: injecting structural priors into modern multimodal systems</li>
+      <li><strong>Recommendation Systems</strong>: cross-domain, sequential, trustworthy, and generative recommendation</li>
+      <li><strong>Agentic Search</strong>: multimodal agents with long reasoning chains and stronger search behavior</li>
+    </ul>
+  </div>
+
+  <section id="education" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-logo">U</div>
+        <div class="timeline-content">
+          <h3>University of Illinois Urbana-Champaign</h3>
+          <div class="timeline-date">M.S. in Computer Science &middot; Aug 2024 - May 2026</div>
+          <div class="timeline-detail">
+            Continuing to the Ph.D. track &middot; Advisor: <a href="https://www.hejingrui.org/">Prof. Jingrui He</a><br>
+            GPA: 4.0/4.0 &middot; Siebel Scholar
           </div>
         </div>
-      </aside>
-
-      <main class="content" id="top">
-        <section class="hero">
-          <div class="hero-intro">
-            <p class="eyebrow">Personal Website</p>
-            <h1>
-              Researching
-              <span>multimodal reasoning, graphs, and intelligent systems.</span>
-            </h1>
-            <p class="lead">
-              I am an M.S. student in Computer Science at the University of Illinois Urbana-Champaign,
-              continuing to the Ph.D. track under Prof. Jingrui He. My current research lies at the
-              intersection of multimodal large language models and graph foundation models, with
-              applications in recommendation systems and agentic search.
-            </p>
-
-            <div class="hero-actions">
-              <a class="button primary" href="#work">View Selected Papers</a>
-              <a class="button secondary" href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">Open CV</a>
-            </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-logo">X</div>
+        <div class="timeline-content">
+          <h3>Xi'an Jiaotong University</h3>
+          <div class="timeline-date">B.Eng. (Honors) in Artificial Intelligence &middot; Sep 2020 - Jul 2024</div>
+          <div class="timeline-detail">
+            Advisor: Prof. Nanning Zheng &middot; GPA: 3.91/4.3 (Top 5%)<br>
+            Youth Program of Qian Xuesen Honors College &middot; AI Experimental Class and Elite Program
           </div>
-
-          <div class="hero-panel">
-            <p class="panel-label">At a Glance</p>
-            <ul class="fact-list">
-              <li>
-                <span class="fact-label">Current Program</span>
-                <span class="fact-value">M.S. in Computer Science, UIUC, continuing to Ph.D. track</span>
-              </li>
-              <li>
-                <span class="fact-label">Research</span>
-                <span class="fact-value">Multimodal LLMs, graph foundation models, recommendation, agentic search</span>
-              </li>
-              <li>
-                <span class="fact-label">Recognition</span>
-                <span class="fact-value">Siebel Scholar, UIUC 4.0/4.0, XJTU AI graduate with top 5% rank</span>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="section intro-grid" id="about">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>About my background and research.</h2>
-          </div>
-          <div class="section-body">
-            <p>
-              Hi, I am Xuying Ning. I am currently an M.S. student in Computer Science at the
-              University of Illinois Urbana-Champaign, where I work with Prof. Jingrui He and
-              continue on the Ph.D. track. Before UIUC, I received my B.Eng. (Honors) in Artificial
-              Intelligence from Xi'an Jiaotong University, where I worked with Prof. Nanning Zheng.
-            </p>
-            <p>
-              My current research interests lie at the intersection of multimodal large language
-              models and graph foundation models. I am especially interested in building methods for
-              multimodal reasoning, structured learning, recommendation systems, and agentic search.
-              I also care about making these systems more effective, robust, and interpretable in
-              real-world settings.
-            </p>
-          </div>
-        </section>
-
-        <section class="section" id="updates">
-          <div class="section-heading">
-            <p class="eyebrow">What's New</p>
-            <h2>Recent notes and milestones.</h2>
-          </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <p class="timeline-date">2026</p>
-              <div>
-                <h3>MC-Search accepted to ICLR 2026 as an Oral</h3>
-                <p>
-                  First-author work on evaluating and enhancing multimodal agentic search with
-                  structured long reasoning chains.
-                </p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-date">2025</p>
-              <div>
-                <h3>Graph4MM and iVAE accepted to ICML 2025 and UAI 2025</h3>
-                <p>
-                  Recent first-author papers focus on multimodal learning with structural
-                  information and cross-domain sequential recommendation.
-                </p>
-              </div>
-            </article>
-            <article class="timeline-item">
-              <p class="timeline-date">2025</p>
-              <div>
-                <h3>Received the Siebel Scholar distinction</h3>
-                <p>
-                  Recognized as a Siebel Scholar while continuing graduate research at UIUC.
-                </p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="work">
-          <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2>Recent papers and research highlights.</h2>
-          </div>
-          <div class="cards">
-            <article class="card">
-              <p class="card-tag">ICLR 2026 Oral</p>
-              <h3>MC-Search</h3>
-              <p>
-                Evaluating and enhancing multimodal agentic search with structured long reasoning
-                chains. This work studies how multimodal agents can reason more effectively over
-                complex search problems.
-              </p>
-              <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">See details in CV</a>
-            </article>
-            <article class="card">
-              <p class="card-tag">ICML 2025</p>
-              <h3>Graph4MM</h3>
-              <p>
-                A graph-based multimodal learning framework that injects multi-hop structural priors
-                into foundation models for fine-grained multimodal reasoning.
-              </p>
-              <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">See details in CV</a>
-            </article>
-            <article class="card">
-              <p class="card-tag">UAI 2025</p>
-              <h3>iVAE</h3>
-              <p>
-                Interest information augmentation with variational regularizers for cross-domain
-                sequential recommendation, with strong gains for cold-start and long-tail settings.
-              </p>
-              <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">See details in CV</a>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="explore">
-          <div class="section-heading">
-            <p class="eyebrow">Explore</p>
-            <h2>Experience, projects, and strengths.</h2>
-          </div>
-          <div class="split-grid">
-            <div class="soft-panel">
-              <h3>Research Experience</h3>
-              <p>
-                Research at UIUC, Ant Group, Columbia University, and the National University of
-                Singapore, spanning multimodal learning, recommendation, and applied ML.
-              </p>
-            </div>
-            <div class="soft-panel">
-              <h3>Industry Experience</h3>
-              <p>
-                Interned at Ant Group and Ruitian Capital, working on recommendation systems,
-                knowledge-graph based modeling, and quantitative ML pipelines for financial data.
-              </p>
-            </div>
-            <div class="soft-panel">
-              <h3>Awards & Honors</h3>
-              <p>
-                Siebel Scholar, Outstanding Student Award, MEGVII Scholarship, Best Project Prize
-                at the NUS summer workshop, and multiple academic honors across undergraduate study.
-              </p>
-            </div>
-            <div class="soft-panel">
-              <h3>Skills</h3>
-              <p>
-                Proficient in Python, PyTorch, TensorFlow, C++, and SQL. Native in Mandarin and
-                proficient in English, with TOEFL 115.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section contact-section" id="contact">
-          <div class="section-heading">
-            <p class="eyebrow">Contact</p>
-            <h2>Let people know how to find you.</h2>
-          </div>
-          <div class="contact-card">
-            <p>
-              I am based in Champaign, Illinois. The best way to reach me is by email. This site
-              will keep growing with project links, publication pages, and additional materials.
-            </p>
-            <div class="contact-links">
-              <a href="mailto:xuyingn2@illinois.edu">xuyingn2@illinois.edu</a>
-              <a href="tel:+14479026907">+1 (447) 902-6907</a>
-              <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">Curriculum Vitae</a>
-              <a href="https://xuyingning.com">xuyingning.com</a>
-            </div>
-          </div>
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
-  </body>
+  </section>
+
+  <section id="experience" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-logo">UI</div>
+        <div class="timeline-content">
+          <h3>University of Illinois Urbana-Champaign</h3>
+          <div class="timeline-date">Researcher &middot; Aug 2024 - now</div>
+          <div class="timeline-detail">
+            Working with Prof. Jingrui He on multimodal learning, graph-aware reasoning, recommendation, and agentic search.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-logo">A</div>
+        <div class="timeline-content">
+          <h3>Ant Group, MYbank Intelligent Engine Department</h3>
+          <div class="timeline-date">Research-oriented Machine Learning Engineer Intern &middot; Jul 2023 - Jul 2024</div>
+          <div class="timeline-detail">
+            Worked on large-scale recommendation systems, de-biasing knowledge-graph recommendation, and cross-domain sequential recommendation.
+            Online A/B tests showed gains in exposure, conversion, and CVR.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-logo">R</div>
+        <div class="timeline-content">
+          <h3>Ruitian Capital</h3>
+          <div class="timeline-date">Quantitative Research Intern, ML Team &middot; Feb 2023 - May 2023</div>
+          <div class="timeline-detail">
+            Built ML pipelines for stock yield prediction, including feature engineering, time-series validation, ensemble models,
+            and Bayesian hyperparameter optimization.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-logo">CU</div>
+        <div class="timeline-content">
+          <h3>Columbia University</h3>
+          <div class="timeline-date">Research Project &middot; Sep 2022 - Dec 2022</div>
+          <div class="timeline-detail">
+            Worked with Prof. Peter Belhumeur on masked face dataset generation and masked face recognition.
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-logo">N</div>
+        <div class="timeline-content">
+          <h3>National University of Singapore</h3>
+          <div class="timeline-date">AI/ML in Financial Services Summer Workshop &middot; May 2022 - Jul 2022</div>
+          <div class="timeline-detail">
+            Developed deep learning methods for stock evaluation and portfolio recommendation; received Best Project Prize.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="news" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">News</h2>
+    <div class="news-container">
+      <div class="news-item">
+        <div class="news-date">2026</div>
+        <div class="news-text"><strong>MC-Search</strong> accepted to <strong>ICLR 2026</strong> as an <strong style="color:#c53030;">Oral</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026</div>
+        <div class="news-text">CoFiRec is under review for <strong>WWW 2026</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026</div>
+        <div class="news-text">FeDecider and an inference-scaling project are under review for <strong>KDD 2026</strong> and <strong>ICLR 2026</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text"><strong>Graph4MM</strong> accepted to <strong>ICML 2025</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text"><strong>iVAE</strong> accepted to <strong>UAI 2025</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text"><strong>Search-MM</strong> accepted by the <strong>NeurIPS 2025 LLM Evaluation Workshop</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text"><strong>AlphaOne</strong> accepted to <strong>EMNLP 2025 Main</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-text">Received the <strong>Siebel Scholar</strong> distinction.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024</div>
+        <div class="news-text">Cross-domain recommendation work published at <strong>ECML-PKDD 2024</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">Publications</h2>
+    <p class="pub-note">Selected papers and ongoing work. A fuller list is available in my CV.</p>
+    <ul class="pub-list">
+      <li class="pub-section-header">2026</li>
+      <li class="pub-item">
+        <div class="pub-title">MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains</div>
+        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Mengting Ai, Jiaru Zou, Ting-Wei Li, Hanghang Tong, Yada Zhu, Hendrik Hamann, Jingrui He</div>
+        <div class="pub-venue">ICLR 2026 <span class="oral">Oral</span></div>
+        <div class="pub-links">
+          <a class="pub-link" href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agentic search</span>
+          <span class="tag tag-multimodal">multimodal</span>
+          <span class="tag tag-llm">llm</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">CoFiRec: Structuring Token Granularity for Generative Recommendation</div>
+        <div class="pub-authors">Tianxin Wei, <span class="me">Xuying Ning</span>, Xuxing Chen, Yan Xie, Ruizhong Qiu, Zhigang Hua, Jingrui He</div>
+        <div class="pub-venue"><span class="under-review">WWW 2026 under review</span></div>
+        <div class="pub-tags">
+          <span class="tag tag-rec">recommendation</span>
+          <span class="tag tag-llm">generative</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">FeDecider: An LLM-Based Framework for Federated Cross-Domain Recommendation</div>
+        <div class="pub-authors">Xinrui He, Ting-Wei Li, Tianxin Wei, <span class="me">Xuying Ning</span>, Xinyu He, Wenxuan Bao, Hanghang Tong, Jingrui He</div>
+        <div class="pub-venue"><span class="under-review">KDD 2026 under review</span></div>
+        <div class="pub-tags">
+          <span class="tag tag-rec">recommendation</span>
+          <span class="tag tag-llm">llm</span>
+        </div>
+      </li>
+
+      <li class="pub-section-header">2025</li>
+      <li class="pub-item">
+        <div class="pub-title">Graph4MM: Weaving Multimodal Learning with Structural Information</div>
+        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Wujiang Xu, Jingrui He</div>
+        <div class="pub-venue">ICML 2025</div>
+        <div class="pub-tags">
+          <span class="tag tag-multimodal">multimodal</span>
+          <span class="tag tag-graph">graph</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">iVAE: Interest Information Augmentation with Variational Regularizers for Cross-Domain Sequential Recommendation</div>
+        <div class="pub-authors"><span class="me">Xuying Ning</span>, Wujiang Xu, Tianxin Wei, Xiaolei Liu</div>
+        <div class="pub-venue">UAI 2025</div>
+        <div class="pub-tags">
+          <span class="tag tag-rec">recommendation</span>
+          <span class="tag tag-llm">representation</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">Search-MM: Benchmarking Multimodal Agentic RAG with Structured Reasoning Chains</div>
+        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Mengting Ai, Jiaru Zou, Ting-Wei Li, Jingrui He</div>
+        <div class="pub-venue">NeurIPS 2025 LLM Evaluation Workshop</div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agentic search</span>
+          <span class="tag tag-multimodal">multimodal</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time</div>
+        <div class="pub-authors">Junyu Zhang, Runpei Dong, Han Wang, <span class="me">Xuying Ning</span>, Haoran Geng, Peihao Li, Xialin He, Yutong Bai, Jitendra Malik, Saurabh Gupta, Huan Zhang</div>
+        <div class="pub-venue">EMNLP 2025 Main</div>
+        <div class="pub-tags">
+          <span class="tag tag-llm">llm</span>
+          <span class="tag tag-agent">reasoning</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <div class="pub-title">SLMRec: Empowering Small Language Models for Sequential Recommendation</div>
+        <div class="pub-authors">Wujiang Xu, Qitian Wu, Zujie Liang, Jiaojiao Han, <span class="me">Xuying Ning</span>, Wenfang Lin, Linxun Chen, Feng Wei, Yongfeng Zhang</div>
+        <div class="pub-venue">ICLR 2025</div>
+        <div class="pub-tags">
+          <span class="tag tag-rec">recommendation</span>
+          <span class="tag tag-llm">small llm</span>
+        </div>
+      </li>
+
+      <li class="pub-section-header">2024</li>
+      <li class="pub-item">
+        <div class="pub-title">Towards Open-World Cross-Domain Sequential Recommendation: A Model-Agnostic Contrastive Denoising Approach</div>
+        <div class="pub-authors">Wujiang Xu, <span class="me">Xuying Ning</span>, Wenfang Lin, Mingming Ha, Qiongxu Ma, Linxun Chen, Bing Han, Minnan Luo</div>
+        <div class="pub-venue">ECML-PKDD 2024</div>
+        <div class="pub-tags">
+          <span class="tag tag-rec">recommendation</span>
+          <span class="tag tag-agent">cross-domain</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="awards" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">Awards & Honors</h2>
+    <div class="awards-grid">
+      <div class="award-item">Siebel Scholar (Class of 2026)</div>
+      <div class="award-item">Outstanding Student Award, Xi'an Jiaotong University</div>
+      <div class="award-item">Best Project Prize, NUS SOC Summer Workshop 2022</div>
+      <div class="award-item">Xi'an Jiaotong University Undergraduate Academic Scholarship</div>
+      <div class="award-item">MEGVII Scholarship (top 3% in Artificial Intelligence)</div>
+      <div class="award-item">Excellent Student Cadre Award, Xi'an Jiaotong University</div>
+      <div class="award-item">Second Prize, National Undergraduate Mathematical Contest in Modeling</div>
+      <div class="award-item">Honorable Mention, Interdisciplinary Contest in Modeling</div>
+    </div>
+
+    <p class="service-text">
+      <strong>Additional Information:</strong> Proficient in Python, PyTorch, TensorFlow, C++, and SQL.
+      Native in Mandarin and proficient in English (TOEFL 115, Speaking 27).
+      Based in Champaign, Illinois. Reach me at <a href="mailto:xuyingn2@illinois.edu">xuyingn2@illinois.edu</a>.
+    </p>
+  </section>
+
+  <footer>
+    Last updated in April 2026. Design adapted to match the clean academic homepage style you referenced.
+  </footer>
+</div>
+
+<button class="back-to-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    offset: 80,
+    duration: 600
+  });
+
+  const backToTop = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
 </html>
