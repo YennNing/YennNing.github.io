@@ -77,14 +77,6 @@
 
     nav .nav-name:hover { opacity: 0.7; }
 
-    .nav-description {
-      font-size: 14px;
-      color: var(--text-light);
-      line-height: 1.7;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border);
-    }
-
     nav .nav-links {
       display: flex;
       flex-direction: column;
@@ -195,6 +187,19 @@
       color: var(--text);
       line-height: 1.75;
       margin-bottom: 20px;
+    }
+
+    .hero-bio p {
+      margin-bottom: 14px;
+    }
+
+    .hero-bio ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    .hero-bio li {
+      margin-bottom: 10px;
     }
 
     .hero-links {
@@ -525,23 +530,47 @@
     .awards-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 14px;
     }
 
     .award-item {
-      padding: 14px 18px;
-      background: var(--bg-alt);
-      border-radius: 8px;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #fbfdff, #f4f8fc);
+      border-radius: 12px;
       font-size: 15px;
       font-weight: 500;
       color: var(--text);
       border-left: 3px solid var(--accent);
+      border: 1px solid var(--border);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .award-item:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .award-item.featured {
+      background: linear-gradient(135deg, #eef5ff, #f8fbff);
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 8px 24px rgba(44, 82, 130, 0.08);
+    }
+
+    .award-title {
+      display: block;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.5;
+    }
+
+    .award-title a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .award-title a:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
 
     .service-text {
@@ -553,6 +582,32 @@
 
     .service-text strong {
       color: var(--primary);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      aspect-ratio: 1 / 1.2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
     }
 
     footer {
@@ -614,9 +669,6 @@
       nav .nav-inner {
         gap: 14px;
       }
-      .nav-description {
-        padding-bottom: 12px;
-      }
       nav .nav-links {
         flex-direction: row;
         flex-wrap: wrap;
@@ -624,6 +676,7 @@
       }
       nav .nav-links a { font-size: 13px; }
       .timeline-item, .news-item { align-items: flex-start; }
+      .gallery-grid { grid-template-columns: 1fr; }
       .hero-photo img {
         width: 220px;
         height: 280px;
@@ -635,16 +688,12 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-name">Xuying Ning</a>
-    <div class="nav-description">
-      UIUC CS M.S. student continuing to the Ph.D. track. I work on multimodal LLMs, graph foundation models, recommendation, and agentic search.
-    </div>
     <div class="nav-links">
       <a href="#about">About</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
       <a href="#news">News</a>
       <a href="#publications">Publications</a>
       <a href="#awards">Awards</a>
+      <a href="#gallery">Gallery</a>
     </div>
   </div>
 </nav>
@@ -657,138 +706,70 @@
     <div class="hero-info" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
       <h1>Xuying Ning</h1>
       <div class="subtitle">
-        M.S. in Computer Science, continuing to the Ph.D. track &middot;
+        Ph.D. in Computer Science &middot;
         <a href="https://cs.illinois.edu/">University of Illinois Urbana-Champaign</a><br>
-        Advised by <a href="https://www.hejingrui.org/">Prof. Jingrui He</a><br>
-        Previous B.Eng. (Honors) in Artificial Intelligence from Xi'an Jiaotong University, advised by Prof. Nanning Zheng
       </div>
-      <p class="hero-bio">
-        My research lies at the intersection of <strong>multimodal large language models</strong> and
-        <strong>graph foundation models</strong>, with applications in <strong>recommendation systems</strong>
-        and <strong>agentic search</strong>. I am interested in building structured, effective, and interpretable
-        learning systems that work well in real-world multimodal settings.
-      </p>
-      <div class="hero-links">
-        <a href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
-        <a href="mailto:xuyingn2@illinois.edu"><i class="fas fa-envelope"></i> Email</a>
-        <a href="tel:+14479026907"><i class="fas fa-phone"></i> Phone</a>
-        <a href="https://xuyingning.com"><i class="fas fa-globe"></i> Website</a>
+      <div class="hero-bio">
+        <p>
+          Hi! I am <strong>Xuying Ning</strong>. I am a <strong>PhD student</strong> at the
+          <a href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>, advised by
+          <a href="https://www.hejingrui.org/">Prof. Jingrui He</a>, and I closely work with
+          <a href="http://tonghanghang.org/">Prof. Hanghang Tong</a>.
+        </p>
+        <p>
+          I am particularly interested in enabling intelligent systems to perform
+          <strong>long-horizon multimodal reasoning</strong> in real-world environments.
+          Questions that I am excited about include:
+        </p>
+        <ul>
+          <li>
+            How to enhance <strong>AI agents</strong> to solve complex tasks in open-world settings,
+            by augmenting multimodal foundation models with long-horizon search, memory, and tool-use capabilities.
+          </li>
+          <li>
+            How to understand and push the reasoning limits of
+            <strong>multimodal foundation models</strong>, enabling them to form structured abstractions
+            and relational understanding from unstructured multimodal inputs.
+          </li>
+          <li>
+            How to build <strong>self-evolving agents</strong> that can adapt, personalize, and explore in open-ended environments,
+            aligning with user needs while improving through interaction.
+          </li>
+        </ul>
+        <p>
+          Prior to this, I received my B.Eng. in Artificial Intelligence from
+          <a href="https://en.xjtu.edu.cn/">Xi'an Jiaotong University</a>, where I was enrolled in the
+          <strong>Honors Youth Program</strong> and the <strong>Artificial Intelligence Experimental Class</strong>.
+          I also spent time as a visiting student at <a href="https://www.columbia.edu/">Columbia University</a> in 2022.
+          I had the privilege of working with <a href="https://scholar.google.com/citations?user=iqMe3p8AAAAJ&hl=zh-CN">Prof. Nanning Zheng</a> and
+          <a href="https://scholar.google.com/citations?user=0uEzYQYAAAAJ&hl=zh-CN">Prof. Qinghua Zheng</a> on research in machine learning and recommender systems.
+        </p>
       </div>
-      <div class="hero-note">
+      <!-- <div class="hero-note">
         Siebel Scholar (Class of 2026) &middot; UIUC GPA 4.0/4.0
-      </div>
+      </div> -->
     </div>
   </section>
 
   <div class="research-interests" data-aos="fade-up" data-aos-duration="600">
     <ul>
+      <li><strong>AI Agents</strong>: long-horizon reasoning, memory, tool use, and self-evolving behavior in open-world environments</li>
       <li><strong>Multimodal Reasoning</strong>: structured learning for image-text understanding and generation</li>
       <li><strong>Graph Foundation Models</strong>: injecting structural priors into modern multimodal systems</li>
-      <li><strong>Recommendation Systems</strong>: cross-domain, sequential, trustworthy, and generative recommendation</li>
-      <li><strong>Agentic Search</strong>: multimodal agents with long reasoning chains and stronger search behavior</li>
+      <li><strong>Personalization</strong>: generative, sequential, and cross-domain recommender systems </li>
     </ul>
   </div>
-
-  <section id="education" data-aos="fade-up" data-aos-duration="600">
-    <h2 class="section-title">Education</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-logo">U</div>
-        <div class="timeline-content">
-          <h3>University of Illinois Urbana-Champaign</h3>
-          <div class="timeline-date">M.S. in Computer Science &middot; Aug 2024 - May 2026</div>
-          <div class="timeline-detail">
-            Continuing to the Ph.D. track &middot; Advisor: <a href="https://www.hejingrui.org/">Prof. Jingrui He</a><br>
-            GPA: 4.0/4.0 &middot; Siebel Scholar
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-logo">X</div>
-        <div class="timeline-content">
-          <h3>Xi'an Jiaotong University</h3>
-          <div class="timeline-date">B.Eng. (Honors) in Artificial Intelligence &middot; Sep 2020 - Jul 2024</div>
-          <div class="timeline-detail">
-            Advisor: Prof. Nanning Zheng &middot; GPA: 3.91/4.3 (Top 5%)<br>
-            Youth Program of Qian Xuesen Honors College &middot; AI Experimental Class and Elite Program
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" data-aos="fade-up" data-aos-duration="600">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-logo">UI</div>
-        <div class="timeline-content">
-          <h3>University of Illinois Urbana-Champaign</h3>
-          <div class="timeline-date">Researcher &middot; Aug 2024 - now</div>
-          <div class="timeline-detail">
-            Working with Prof. Jingrui He on multimodal learning, graph-aware reasoning, recommendation, and agentic search.
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-logo">A</div>
-        <div class="timeline-content">
-          <h3>Ant Group, MYbank Intelligent Engine Department</h3>
-          <div class="timeline-date">Research-oriented Machine Learning Engineer Intern &middot; Jul 2023 - Jul 2024</div>
-          <div class="timeline-detail">
-            Worked on large-scale recommendation systems, de-biasing knowledge-graph recommendation, and cross-domain sequential recommendation.
-            Online A/B tests showed gains in exposure, conversion, and CVR.
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-logo">R</div>
-        <div class="timeline-content">
-          <h3>Ruitian Capital</h3>
-          <div class="timeline-date">Quantitative Research Intern, ML Team &middot; Feb 2023 - May 2023</div>
-          <div class="timeline-detail">
-            Built ML pipelines for stock yield prediction, including feature engineering, time-series validation, ensemble models,
-            and Bayesian hyperparameter optimization.
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-logo">CU</div>
-        <div class="timeline-content">
-          <h3>Columbia University</h3>
-          <div class="timeline-date">Research Project &middot; Sep 2022 - Dec 2022</div>
-          <div class="timeline-detail">
-            Worked with Prof. Peter Belhumeur on masked face dataset generation and masked face recognition.
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-logo">N</div>
-        <div class="timeline-content">
-          <h3>National University of Singapore</h3>
-          <div class="timeline-date">AI/ML in Financial Services Summer Workshop &middot; May 2022 - Jul 2022</div>
-          <div class="timeline-detail">
-            Developed deep learning methods for stock evaluation and portfolio recommendation; received Best Project Prize.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="news" data-aos="fade-up" data-aos-duration="600">
     <h2 class="section-title">News</h2>
     <div class="news-container">
       <div class="news-item">
         <div class="news-date">2026</div>
-        <div class="news-text"><strong>MC-Search</strong> accepted to <strong>ICLR 2026</strong> as an <strong style="color:#c53030;">Oral</strong>.</div>
+        <div class="news-text">Three papers (Mem-Gallery, PaperMind, and AdaFuse) accepted by <strong>ACL 2026</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2026</div>
-        <div class="news-text">CoFiRec is under review for <strong>WWW 2026</strong>.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-date">2026</div>
-        <div class="news-text">FeDecider and an inference-scaling project are under review for <strong>KDD 2026</strong> and <strong>ICLR 2026</strong>.</div>
+        <div class="news-text"><strong>MC-Search</strong> accepted to <strong>ICLR 2026</strong> as an <strong style="color:#c53030;">Oral (Top 1%)</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
@@ -800,26 +781,18 @@
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
-        <div class="news-text"><strong>Search-MM</strong> accepted by the <strong>NeurIPS 2025 LLM Evaluation Workshop</strong>.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-date">2025</div>
         <div class="news-text"><strong>AlphaOne</strong> accepted to <strong>EMNLP 2025 Main</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
         <div class="news-text">Received the <strong>Siebel Scholar</strong> distinction.</div>
       </div>
-      <div class="news-item">
-        <div class="news-date">2024</div>
-        <div class="news-text">Cross-domain recommendation work published at <strong>ECML-PKDD 2024</strong>.</div>
-      </div>
     </div>
   </section>
 
   <section id="publications" data-aos="fade-up" data-aos-duration="600">
     <h2 class="section-title">Publications</h2>
-    <p class="pub-note">Selected papers and ongoing work. A fuller list is available in my CV.</p>
+    <p class="pub-note">Selected papers and ongoing work. See a fuller list on <a class="pub-link-inline" href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.</p>
     <ul class="pub-list">
       <li class="pub-section-header">2026</li>
       <li class="pub-item">
@@ -838,19 +811,10 @@
       <li class="pub-item">
         <div class="pub-title">CoFiRec: Structuring Token Granularity for Generative Recommendation</div>
         <div class="pub-authors">Tianxin Wei, <span class="me">Xuying Ning</span>, Xuxing Chen, Yan Xie, Ruizhong Qiu, Zhigang Hua, Jingrui He</div>
-        <div class="pub-venue"><span class="under-review">WWW 2026 under review</span></div>
-        <div class="pub-tags">
+        <div class="pub-venue"><span class="under-review">Arxiv Preprint</span></div>
+        <div class="pub-tags">  
           <span class="tag tag-rec">recommendation</span>
           <span class="tag tag-llm">generative</span>
-        </div>
-      </li>
-      <li class="pub-item">
-        <div class="pub-title">FeDecider: An LLM-Based Framework for Federated Cross-Domain Recommendation</div>
-        <div class="pub-authors">Xinrui He, Ting-Wei Li, Tianxin Wei, <span class="me">Xuying Ning</span>, Xinyu He, Wenxuan Bao, Hanghang Tong, Jingrui He</div>
-        <div class="pub-venue"><span class="under-review">KDD 2026 under review</span></div>
-        <div class="pub-tags">
-          <span class="tag tag-rec">recommendation</span>
-          <span class="tag tag-llm">llm</span>
         </div>
       </li>
 
@@ -870,17 +834,8 @@
         <div class="pub-venue">UAI 2025</div>
         <div class="pub-tags">
           <span class="tag tag-rec">recommendation</span>
-          <span class="tag tag-llm">representation</span>
         </div>
       </li>
-      <li class="pub-item">
-        <div class="pub-title">Search-MM: Benchmarking Multimodal Agentic RAG with Structured Reasoning Chains</div>
-        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Mengting Ai, Jiaru Zou, Ting-Wei Li, Jingrui He</div>
-        <div class="pub-venue">NeurIPS 2025 LLM Evaluation Workshop</div>
-        <div class="pub-tags">
-          <span class="tag tag-agent">agentic search</span>
-          <span class="tag tag-multimodal">multimodal</span>
-        </div>
       </li>
       <li class="pub-item">
         <div class="pub-title">AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time</div>
@@ -901,30 +856,28 @@
         </div>
       </li>
 
-      <li class="pub-section-header">2024</li>
-      <li class="pub-item">
-        <div class="pub-title">Towards Open-World Cross-Domain Sequential Recommendation: A Model-Agnostic Contrastive Denoising Approach</div>
-        <div class="pub-authors">Wujiang Xu, <span class="me">Xuying Ning</span>, Wenfang Lin, Mingming Ha, Qiongxu Ma, Linxun Chen, Bing Han, Minnan Luo</div>
-        <div class="pub-venue">ECML-PKDD 2024</div>
-        <div class="pub-tags">
-          <span class="tag tag-rec">recommendation</span>
-          <span class="tag tag-agent">cross-domain</span>
-        </div>
-      </li>
     </ul>
   </section>
 
   <section id="awards" data-aos="fade-up" data-aos-duration="600">
     <h2 class="section-title">Awards & Honors</h2>
     <div class="awards-grid">
-      <div class="award-item">Siebel Scholar (Class of 2026)</div>
-      <div class="award-item">Outstanding Student Award, Xi'an Jiaotong University</div>
-      <div class="award-item">Best Project Prize, NUS SOC Summer Workshop 2022</div>
-      <div class="award-item">Xi'an Jiaotong University Undergraduate Academic Scholarship</div>
-      <div class="award-item">MEGVII Scholarship (top 3% in Artificial Intelligence)</div>
-      <div class="award-item">Excellent Student Cadre Award, Xi'an Jiaotong University</div>
-      <div class="award-item">Second Prize, National Undergraduate Mathematical Contest in Modeling</div>
-      <div class="award-item">Honorable Mention, Interdisciplinary Contest in Modeling</div>
+      <div class="award-item featured">
+        <span class="award-title">
+          <a href="https://siebelschool.illinois.edu/news/2026-siebel-scholars" target="_blank" rel="noreferrer">
+            Siebel Scholar
+          </a>
+        </span>
+      </div>
+      <div class="award-item">
+        <span class="award-title">Outstanding Student Award</span>
+      </div>
+      <div class="award-item">
+        <span class="award-title">Best Project Prize</span>
+      </div>
+      <div class="award-item">
+        <span class="award-title">MEGVII Scholarship</span>
+      </div>
     </div>
 
     <p class="service-text">
@@ -934,8 +887,23 @@
     </p>
   </section>
 
+  <section id="gallery" data-aos="fade-up" data-aos-duration="600">
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/xuying2.JPG" alt="Xuying Ning portrait">
+      </div>
+      <div class="gallery-item">
+        <img src="images/xuying.jpg" alt="Xuying Ning portrait">
+      </div>
+      <div class="gallery-item">
+        <img src="images/xuying2.JPG" alt="Xuying Ning portrait">
+      </div>
+    </div>
+  </section>
+
   <footer>
-    Last updated in April 2026. Design adapted to match the clean academic homepage style you referenced.
+    Last updated in April 2026. 
   </footer>
 </div>
 
