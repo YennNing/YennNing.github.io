@@ -135,9 +135,17 @@
       flex-shrink: 0;
     }
 
+    .hero-photo-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: stretch;
+      width: 350px;
+    }
+
     .hero-photo img {
-      width: 300px;
-      height: 380px;
+      width: 350px;
+      height: 450px;
       border-radius: 14px;
       object-fit: cover;
       border: 3px solid var(--border);
@@ -215,6 +223,13 @@
       gap: 8px;
       flex-wrap: wrap;
       margin-bottom: 16px;
+    }
+
+    .photo-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 0;
     }
 
     .hero-links a {
@@ -664,7 +679,7 @@
       body { padding-left: 0; }
       .container { padding: 0 20px; }
       .hero { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
-      .hero-info h1 { font-size: 32px; }
+      .hero-info h1 { font-size: 36px; }
       .hero-links { justify-content: center; }
       .research-interests ul { grid-template-columns: 1fr; }
       .awards-grid { grid-template-columns: 1fr; }
@@ -687,8 +702,14 @@
       .timeline-item, .news-item { align-items: flex-start; }
       .gallery-grid { grid-template-columns: 1fr; }
       .hero-photo img {
-        width: 250px;
-        height: 320px;
+        width: 280px;
+        height: 360px;
+      }
+      .hero-photo-card {
+        width: 280px;
+      }
+      .photo-links {
+        grid-template-columns: 1fr 1fr;
       }
     }
   </style>
@@ -710,7 +731,16 @@
 <div class="container">
   <section class="hero" id="about">
     <div class="hero-photo" data-aos="fade-right" data-aos-duration="800">
-      <img src="images/xuying2.JPG" alt="Xuying Ning">
+      <div class="hero-photo-card">
+        <img src="images/xuying2.JPG" alt="Xuying Ning">
+        <div class="hero-links photo-links">
+          <a href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+          <a href="https://github.com/YennNing" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
+          <a href="mailto:xuyingn2@illinois.edu"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/xuying-ning0105" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="data/Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
+        </div>
+      </div>
     </div>
     <div class="hero-info" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
       <h1>Xuying Ning</h1>
@@ -750,13 +780,6 @@
             aligning with user needs while improving through interaction.
           </li>
         </ul>
-      </div>
-      <div class="hero-links">
-        <a href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-        <a href="https://github.com/YennNing" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
-        <a href="mailto:xuyingn2@illinois.edu"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://www.linkedin.com/in/xuying-ning0105" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-        <a href="data/Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
       </div>
       <!-- <div class="hero-note">
         Siebel Scholar (Class of 2026) &middot; UIUC GPA 4.0/4.0
