@@ -22,7 +22,7 @@
       --primary: #1a2a3a;
       --accent: #5f8fbe;
       --accent-light: #eef5fb;
-      --accent-soft: #7ea6cd;
+      --accent-soft: #5f8fbe;
       --text: #2d3748;
       --text-light: #718096;
       --border: #e2e8f0;
@@ -140,12 +140,12 @@
       flex-direction: column;
       gap: 14px;
       align-items: stretch;
-      width: 350px;
+      width: 330px;
     }
 
     .hero-photo img {
-      width: 350px;
-      height: 450px;
+      width: 330px;
+      height: 425px;
       border-radius: 14px;
       object-fit: cover;
       border: 3px solid var(--border);
@@ -218,39 +218,37 @@
       margin-bottom: 10px;
     }
 
-    .hero-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+    .photo-links {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 0;
+      text-align: center;
     }
 
-    .photo-links {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
-      margin-bottom: 0;
+    .photo-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .photo-links a:hover {
+      text-decoration: underline;
+    }
+
+    .photo-links .separator {
+      color: var(--text-light);
+      margin: 0 4px;
+    }
+
+    .photo-links .link-row {
+      display: block;
     }
 
     .hero-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 16px;
-      font-size: 14px;
-      font-weight: 500;
       color: var(--accent);
-      border: 1.5px solid var(--accent);
-      border-radius: 20px;
       text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .hero-links a:hover {
-      background: var(--accent);
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(44, 82, 130, 0.25);
+      transition: color 0.2s ease;
     }
 
     .hero-note {
@@ -680,7 +678,6 @@
       .container { padding: 0 20px; }
       .hero { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
       .hero-info h1 { font-size: 36px; }
-      .hero-links { justify-content: center; }
       .research-interests ul { grid-template-columns: 1fr; }
       .awards-grid { grid-template-columns: 1fr; }
       nav {
@@ -708,9 +705,6 @@
       .hero-photo-card {
         width: 280px;
       }
-      .photo-links {
-        grid-template-columns: 1fr 1fr;
-      }
     }
   </style>
 </head>
@@ -734,11 +728,18 @@
       <div class="hero-photo-card">
         <img src="images/xuying2.JPG" alt="Xuying Ning">
         <div class="hero-links photo-links">
-          <a href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-          <a href="https://github.com/YennNing" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> GitHub</a>
-          <a href="mailto:xuyingn2@illinois.edu"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://www.linkedin.com/in/xuying-ning0105" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          <a href="data/Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
+          <span class="link-row">
+            <a href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+            <span class="separator">/</span>
+            <a href="https://github.com/YennNing" target="_blank" rel="noreferrer">GitHub</a>
+            <span class="separator">/</span>
+            <a href="https://www.linkedin.com/in/xuying-ning0105" target="_blank" rel="noreferrer">LinkedIn</a>
+          </span>
+          <span class="link-row">
+            <a href="mailto:xuyingn2@illinois.edu">E-mail</a>
+            <span class="separator">/</span>
+            <a href="data/Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer">CV</a>
+          </span>
         </div>
       </div>
     </div>
