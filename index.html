@@ -159,7 +159,7 @@
 
     .hero-info h1 {
       font-family: 'Crimson Pro', Georgia, serif;
-      font-size: 40px;
+      font-size: 36px;
       font-weight: 600;
       color: var(--primary);
       margin-bottom: 6px;
@@ -422,8 +422,14 @@
     .pub-note {
       font-size: 14px;
       color: var(--text-light);
-      margin-bottom: 20px;
+      margin-bottom: 8px;
       font-style: italic;
+    }
+
+    .pub-legend {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
     }
 
     .pub-list {
@@ -475,9 +481,10 @@
 
     .pub-authors .me {
       color: var(--primary);
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: underline;
       text-decoration-color: var(--accent);
+      text-decoration-thickness: 1.5px;
       text-underline-offset: 2px;
     }
 
@@ -677,7 +684,7 @@
       body { padding-left: 0; }
       .container { padding: 0 20px; }
       .hero { flex-direction: column; gap: 24px; align-items: center; text-align: center; }
-      .hero-info h1 { font-size: 36px; }
+      .hero-info h1 { font-size: 32px; }
       .research-interests ul { grid-template-columns: 1fr; }
       .awards-grid { grid-template-columns: 1fr; }
       nav {
@@ -790,10 +797,10 @@
 
   <div class="research-interests" data-aos="fade-up" data-aos-duration="600">
     <ul>
-      <li><strong>AI Agents</strong>: long-horizon reasoning, memory, tool use, and self-evolving behavior in open-world environments</li>
-      <li><strong>Multimodal Reasoning</strong>: structured learning for image-text understanding and generation</li>
-      <li><strong>Graph Foundation Models</strong>: injecting structural priors into modern multimodal systems</li>
-      <li><strong>Personalization</strong>: generative, sequential, and cross-domain recommender systems </li>
+      <li><strong>AI Agents</strong>: MC-Search, Mem-Gallery, Evo-Mem, PaperMind</li>
+      <li><strong>Multimodal Reasoning</strong>: Graph4MM, MC-Search, Mem-Gallery</li>
+      <li><strong>Graph Foundation Models</strong>: Graph4MM</li>
+      <li><strong>Personalization</strong>: CoFiRec, I^2VAE, SLMRec, iAgent</li>
     </ul>
   </div>
 
@@ -838,14 +845,15 @@
   <section id="publications" data-aos="fade-up" data-aos-duration="600">
     <h2 class="section-title">Publications</h2>
     <p class="pub-note">Selected papers and ongoing work. See a fuller list on <a class="pub-link-inline" href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.</p>
+    <p class="pub-legend"><span class="me">Xuying Ning</span> indicates my papers. * denotes equal contribution and ^ denotes corresponding author.</p>
     <ul class="pub-list">
       <li class="pub-section-header">2026</li>
       <li class="pub-item">
-        <div class="pub-title">MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains</div>
-        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Mengting Ai, Jiaru Zou, Ting-Wei Li, Hanghang Tong, Yada Zhu, Hendrik Hamann, Jingrui He</div>
-        <div class="pub-venue">ICLR 2026 <span class="oral">Oral</span></div>
+        <a href="https://arxiv.org/abs/2603.00873" class="pub-title" target="_blank" rel="noreferrer">MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains</a>
+        <div class="pub-venue"><em>ICLR 2026</em> <span class="oral">Oral (Top 1%)</span></div>
+        <div class="pub-authors"><span class="me">Xuying Ning*</span>, Dongqi Fu*, Tianxin Wei*, Mengting Ai, Jiaru Zou, Ting-Wei Li, Hanghang Tong, Yada Zhu, Hendrik Hamann, Jingrui He</div>
         <div class="pub-links">
-          <a class="pub-link" href="Xuying_Ning_UIUC.pdf" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> CV</a>
+          <a class="pub-link" href="https://arxiv.org/abs/2603.00873" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
         </div>
         <div class="pub-tags">
           <span class="tag tag-agent">agentic search</span>
@@ -854,10 +862,63 @@
         </div>
       </li>
       <li class="pub-item">
-        <div class="pub-title">CoFiRec: Structuring Token Granularity for Generative Recommendation</div>
-        <div class="pub-authors">Tianxin Wei, <span class="me">Xuying Ning</span>, Xuxing Chen, Yan Xie, Ruizhong Qiu, Zhigang Hua, Jingrui He</div>
-        <div class="pub-venue"><span class="under-review">Arxiv Preprint</span></div>
-        <div class="pub-tags">  
+        <a href="https://arxiv.org/abs/2511.20857" class="pub-title" target="_blank" rel="noreferrer">Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory</a>
+        <div class="pub-venue"><em>arXiv 2025</em></div>
+        <div class="pub-authors">Tianxin Wei, Noveen Sachdeva, Benjamin Coleman, Zhankui He, Yuarchen Bei, <span class="me">Xuying Ning</span>, Mengting Ai, Yunzhe Li, Jingrui He, Ed H. Chi, Chi Wang, Shuo Chen, Fernando Pereira, Wang-Cheng Kang, Derek Zhiyuan Cheng</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2511.20857" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agent</span>
+          <span class="tag tag-rec">memory</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <a href="https://arxiv.org/abs/2601.03515" class="pub-title" target="_blank" rel="noreferrer">Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents</a>
+        <div class="pub-venue"><em>ACL 2026 Main</em></div>
+        <div class="pub-authors">Yuanchen Bei, Tianxin Wei, <span class="me">Xuying Ning</span>, Yanjun Zhao, Zhining Liu, Xiao Lin, Yada Zhu, Hendrik Hamann, Jingrui He, Hanghang Tong</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+          <a class="pub-link" href="https://github.com/YuanchenBei/Mem-Gallery" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> Code</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agent</span>
+          <span class="tag tag-multimodal">multimodal</span>
+          <span class="tag tag-rec">memory</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <a href="https://aclanthology.org/2026.findings-acl.879/" class="pub-title" target="_blank" rel="noreferrer">PaperMind: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs</a>
+        <div class="pub-venue"><em>ACL 2026 Findings</em></div>
+        <div class="pub-authors">Yanjun Zhao*, Tianxin Wei*^, Jiaru Zou, <span class="me">Xuying Ning</span>, Yuanchen Bei, Lingjie Chen, Simmi Rana, Wendy H. Yang, Hanghang Tong, Jingrui He</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://aclanthology.org/2026.findings-acl.879/" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agent</span>
+          <span class="tag tag-multimodal">multimodal</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <a href="https://arxiv.org/abs/2601.06022" class="pub-title" target="_blank" rel="noreferrer">AdaFuse: Adaptive Ensemble Decoding with Test-Time Scaling for LLMs</a>
+        <div class="pub-venue"><em>ACL 2026 Main</em></div>
+        <div class="pub-authors">Chengming Cui*, Tianxin Wei*^, Ziyi Chen, Ruizhong Qiu, Zhichen Zeng, Zhining Liu, <span class="me">Xuying Ning</span>, Duo Zhou, Jingrui He</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2601.06022" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-llm">llm</span>
+          <span class="tag tag-agent">reasoning</span>
+        </div>
+      </li>
+      <li class="pub-item">
+        <a href="https://www.arxiv.org/abs/2511.22707" class="pub-title" target="_blank" rel="noreferrer">CoFiRec: Coarse-to-Fine Tokenization for Generative Recommendation</a>
+        <div class="pub-venue"><em>arXiv 2025</em></div>
+        <div class="pub-authors">Tianxin Wei*, <span class="me">Xuying Ning*</span>, Xuxing Chen, Ruizhong Qiu, Yupeng Hou, Yan Xie, Shuang Yang, Zhigang Hua, Jingrui He</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://www.arxiv.org/abs/2511.22707" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
+        <div class="pub-tags">
           <span class="tag tag-rec">recommendation</span>
           <span class="tag tag-llm">generative</span>
         </div>
@@ -865,36 +926,47 @@
 
       <li class="pub-section-header">2025</li>
       <li class="pub-item">
-        <div class="pub-title">Graph4MM: Weaving Multimodal Learning with Structural Information</div>
+        <a href="https://openreview.net/forum?id=FB2e8PV6qg" class="pub-title" target="_blank" rel="noreferrer">Graph4MM: Weaving Multimodal Learning with Structural Information</a>
+        <div class="pub-venue"><em>ICML 2025</em></div>
         <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Wujiang Xu, Jingrui He</div>
-        <div class="pub-venue">ICML 2025</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://openreview.net/forum?id=FB2e8PV6qg" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
         <div class="pub-tags">
           <span class="tag tag-multimodal">multimodal</span>
           <span class="tag tag-graph">graph</span>
         </div>
       </li>
       <li class="pub-item">
-        <div class="pub-title">iVAE: Interest Information Augmentation with Variational Regularizers for Cross-Domain Sequential Recommendation</div>
+        <a href="https://arxiv.org/abs/2405.20710" class="pub-title" target="_blank" rel="noreferrer">I&sup2;VAE: Interest Information Augmentation with Variational Regularizers for Cross-Domain Sequential Recommendation</a>
+        <div class="pub-venue"><em>UAI 2025</em></div>
         <div class="pub-authors"><span class="me">Xuying Ning</span>, Wujiang Xu, Tianxin Wei, Xiaolei Liu</div>
-        <div class="pub-venue">UAI 2025</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2405.20710" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
         <div class="pub-tags">
           <span class="tag tag-rec">recommendation</span>
         </div>
       </li>
-      </li>
       <li class="pub-item">
-        <div class="pub-title">AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time</div>
+        <a href="https://aclanthology.org/2025.emnlp-main.635/" class="pub-title" target="_blank" rel="noreferrer">AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time</a>
+        <div class="pub-venue"><em>EMNLP 2025 Main</em></div>
         <div class="pub-authors">Junyu Zhang, Runpei Dong, Han Wang, <span class="me">Xuying Ning</span>, Haoran Geng, Peihao Li, Xialin He, Yutong Bai, Jitendra Malik, Saurabh Gupta, Huan Zhang</div>
-        <div class="pub-venue">EMNLP 2025 Main</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://aclanthology.org/2025.emnlp-main.635/" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
         <div class="pub-tags">
           <span class="tag tag-llm">llm</span>
           <span class="tag tag-agent">reasoning</span>
         </div>
       </li>
       <li class="pub-item">
-        <div class="pub-title">SLMRec: Empowering Small Language Models for Sequential Recommendation</div>
+        <a href="https://openreview.net/forum?id=xyYbN8Q45Y" class="pub-title" target="_blank" rel="noreferrer">SLMRec: Empowering Small Language Models for Sequential Recommendation</a>
+        <div class="pub-venue"><em>ICLR 2025</em></div>
         <div class="pub-authors">Wujiang Xu, Qitian Wu, Zujie Liang, Jiaojiao Han, <span class="me">Xuying Ning</span>, Wenfang Lin, Linxun Chen, Feng Wei, Yongfeng Zhang</div>
-        <div class="pub-venue">ICLR 2025</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://openreview.net/forum?id=xyYbN8Q45Y" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
         <div class="pub-tags">
           <span class="tag tag-rec">recommendation</span>
           <span class="tag tag-llm">small llm</span>
