@@ -568,6 +568,17 @@
       box-shadow: 0 2px 8px rgba(44, 82, 130, 0.2);
     }
 
+    .pub-star-badge {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .pub-star-badge img {
+      display: block;
+      height: 20px;
+    }
+
     .pub-tags {
       display: flex;
       gap: 4px;
@@ -854,35 +865,43 @@
     <div class="news-container">
       <div class="news-item">
         <div class="news-date">May 2026</div>
-        <div class="news-text"><strong>Code as Agent Harness</strong> ranked <a href="https://huggingface.co/papers/2605.18747" target="_blank" rel="noreferrer"><strong>#1 on Hugging Face Daily Papers</strong></a>.</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2605.18747" target="_blank" rel="noreferrer"><strong>Code as Agent Harness</strong></a> ranked <a href="https://huggingface.co/papers/2605.18747" target="_blank" rel="noreferrer"><strong>#1 on Hugging Face Daily Papers</strong></a>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2026</div>
-        <div class="news-text">Three papers (Mem-Gallery, PaperMind, and AdaFuse) accepted by <strong>ACL 2026</strong>.</div>
+        <div class="news-text">Three papers accepted to <strong>EMNLP 2026</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2026</div>
-        <div class="news-text"><strong>MC-Search</strong> accepted to <strong>ICLR 2026</strong> as an <strong style="color:#c53030;">Oral (Top 1%)</strong>.</div>
+        <div class="news-text"><a href="https://www.arxiv.org/abs/2511.22707" target="_blank" rel="noreferrer"><strong>CoFiRec</strong></a> accepted to <strong>RecSys 2026</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026</div>
+        <div class="news-text">Three papers (<a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noreferrer">Mem-Gallery</a>, <a href="https://aclanthology.org/2026.findings-acl.879/" target="_blank" rel="noreferrer">PaperMind</a>, and <a href="https://arxiv.org/abs/2601.06022" target="_blank" rel="noreferrer">AdaFuse</a>) accepted by <strong>ACL 2026</strong>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2603.00873" target="_blank" rel="noreferrer"><strong>MC-Search</strong></a> accepted to <strong>ICLR 2026</strong> as an <strong style="color:#c53030;">Oral (Top 1%)</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Jan 2026</div>
-        <div class="news-text">Survey on Agentic AI and Reasoning ranked <strong>#1 on Hugging Face Daily Papers</strong>.</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2601.12538" target="_blank" rel="noreferrer">Survey on Agentic AI and Reasoning</a> ranked <strong>#1 on Hugging Face Daily Papers</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Jan 2026</div>
-        <div class="news-text"><strong>Evo-Memory</strong> featured in <strong>MIT Technology Review</strong>.</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2511.20857" target="_blank" rel="noreferrer"><strong>Evo-Memory</strong></a> featured in <strong>MIT Technology Review</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
-        <div class="news-text"><strong>Graph4MM</strong> accepted to <strong>ICML 2025</strong>.</div>
+        <div class="news-text"><a href="https://openreview.net/forum?id=FB2e8PV6qg" target="_blank" rel="noreferrer"><strong>Graph4MM</strong></a> accepted to <strong>ICML 2025</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
-        <div class="news-text"><strong>I&sup2;VAE</strong> accepted to <strong>UAI 2025</strong>.</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2405.20710" target="_blank" rel="noreferrer"><strong>I&sup2;VAE</strong></a> accepted to <strong>UAI 2025</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
-        <div class="news-text"><strong>AlphaOne</strong> accepted to <strong>EMNLP 2025 Main</strong>.</div>
+        <div class="news-text"><a href="https://aclanthology.org/2025.emnlp-main.635/" target="_blank" rel="noreferrer"><strong>AlphaOne</strong></a> accepted to <strong>EMNLP 2025 Main</strong>.</div>
       </div>
       <div class="news-item">
         <div class="news-date">2025</div>
@@ -904,6 +923,7 @@
         <div class="pub-links">
           <a class="pub-link" href="https://arxiv.org/abs/2605.18747" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
           <a class="pub-link" href="https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> Code</a>
+          <a class="pub-star-badge" href="https://github.com/YennNing/Awesome-Code-as-Agent-Harness-Papers/stargazers" target="_blank" rel="noreferrer" aria-label="View GitHub stars"><img src="https://img.shields.io/github/stars/YennNing/Awesome-Code-as-Agent-Harness-Papers?style=flat&amp;logo=github&amp;label=Stars&amp;color=555" alt="GitHub stars" loading="lazy"></a>
         </div>
         <div class="pub-tags">
           <span class="tag tag-agent">agent</span>
@@ -980,7 +1000,7 @@
       </li>
       <li class="pub-item">
         <a href="https://www.arxiv.org/abs/2511.22707" class="pub-title" target="_blank" rel="noreferrer">CoFiRec: Coarse-to-Fine Tokenization for Generative Recommendation</a>
-        <div class="pub-venue"><em>arXiv 2025</em></div>
+        <div class="pub-venue"><em>RecSys 2026</em></div>
         <div class="pub-authors">Tianxin Wei*, <span class="me">Xuying Ning*</span>, Xuxing Chen, Ruizhong Qiu, Yupeng Hou, Yan Xie, Shuang Yang, Zhigang Hua, Jingrui He</div>
         <div class="pub-links">
           <a class="pub-link" href="https://www.arxiv.org/abs/2511.22707" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
