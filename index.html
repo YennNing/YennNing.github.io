@@ -609,6 +609,12 @@
       font-weight: 700;
     }
 
+    .pub-venue .work-in-progress {
+      color: var(--gold);
+      font-weight: 700;
+      margin-left: 4px;
+    }
+
     .pub-links {
       display: flex;
       gap: 6px;
@@ -896,23 +902,24 @@
           <a href="https://scholar.google.com/citations?user=0uEzYQYAAAAJ&hl=zh-CN">Prof. Qinghua Zheng</a>.
         </p>
         <p>
-          I am particularly interested in enabling intelligent systems to perform
-          <strong>long-horizon multimodal reasoning</strong> in real-world environments.
+          I am particularly interested in enabling intelligent systems to
+          <strong>reason, act, and evolve over long horizons</strong> in real-world environments.
           Questions that I am excited about include:
         </p>
         <ul>
           <li>
-            How to enhance <strong>AI agents</strong> to solve complex tasks in open-world settings,
-            by augmenting multimodal foundation models with long-horizon search, memory, and tool-use capabilities.
+            How can <strong>AI agents</strong> solve complex open-world tasks by augmenting foundation models
+            with external harnesses, including deep search, memory, planning, and tool use?
           </li>
           <li>
-            How to understand and push the reasoning limits of
-            <strong>multimodal foundation models</strong>, enabling them to form structured abstractions
-            and relational understanding from unstructured multimodal inputs.
+            How can we build <strong>self-evolving agents</strong> that continually adapt, personalize, and explore
+            through interaction, co-evolve with their harnesses, and progressively internalize harness-augmented
+            knowledge and skills through test-time learning?
           </li>
           <li>
-            How to build <strong>self-evolving agents</strong> that can adapt, personalize, and explore in open-ended environments,
-            aligning with user needs while improving through interaction.
+            How can we understand and extend the reasoning capabilities of <strong>multimodal foundation models</strong>,
+            enabling agents to form structured and relational abstractions from unstructured observations and
+            interleave perception, reasoning, and action in partially observable computer-use and embodied environments?
           </li>
         </ul>
       </div>
@@ -924,7 +931,7 @@
 
   <div class="research-interests" data-aos="fade-up" data-aos-duration="600">
     <ul>
-      <li><strong>AI Agents</strong>: <a href="https://arxiv.org/abs/2603.00873" target="_blank" rel="noreferrer">MC-Search</a>, <a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noreferrer">Mem-Gallery</a>, <a href="https://arxiv.org/abs/2511.20857" target="_blank" rel="noreferrer">Evo-Mem</a></li>
+      <li><strong>AI Agents</strong>: <a href="https://arxiv.org/abs/2608.05446" target="_blank" rel="noreferrer">EvoHarness-RL</a>, <a href="https://arxiv.org/abs/2603.00873" target="_blank" rel="noreferrer">MC-Search</a>, <a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noreferrer">Mem-Gallery</a>, <a href="https://arxiv.org/abs/2511.20857" target="_blank" rel="noreferrer">Evo-Mem</a></li>
       <li><strong>Multimodal Reasoning</strong>: <a href="https://openreview.net/forum?id=FB2e8PV6qg" target="_blank" rel="noreferrer">Graph4MM</a>, <a href="https://arxiv.org/abs/2603.00873" target="_blank" rel="noreferrer">MC-Search</a>, <a href="https://arxiv.org/abs/2601.03515" target="_blank" rel="noreferrer">Mem-Gallery</a></li>
       <li><strong>Graph Foundation Models</strong>: <a href="https://openreview.net/forum?id=FB2e8PV6qg" target="_blank" rel="noreferrer">Graph4MM</a></li>
       <li><strong>Personalization</strong>: <a href="https://www.arxiv.org/abs/2511.22707" target="_blank" rel="noreferrer">CoFiRec</a>, <a href="https://arxiv.org/abs/2405.20710" target="_blank" rel="noreferrer">I&sup2;VAE</a>, <a href="https://openreview.net/forum?id=xyYbN8Q45Y" target="_blank" rel="noreferrer">SLMRec</a>, <a href="https://arxiv.org/abs/2502.14662" target="_blank" rel="noreferrer">iAgent</a></li>
@@ -998,6 +1005,20 @@
     </div>
     <ul class="pub-list">
       <li class="pub-section-header">2026</li>
+      <li class="pub-item" data-tags="agent llm memory">
+        <a href="https://arxiv.org/abs/2608.05446" class="pub-title" target="_blank" rel="noreferrer">EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents</a>
+        <div class="pub-venue"><em>COLM 2026 LLA Workshop</em> <span class="work-in-progress">Work in Progress</span></div>
+        <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Hanqing Zeng, Yuanchen Bei, Bingxuan Li, Zihao Li, Qifan Wang, Xiang Shen, Yifan Wu, Jiayi Liu, Hong Li, Yinglong Xia, Xiangjun Fan, Hanghang Tong, Jingrui He</div>
+        <div class="pub-insight"><strong>Key Insight:</strong> Optimizes agent harness coordination with reinforcement learning for sustained self-improvement on long-horizon tasks.</div>
+        <div class="pub-links">
+          <a class="pub-link" href="https://arxiv.org/abs/2608.05446" target="_blank" rel="noreferrer"><i class="fas fa-file-alt"></i> Paper</a>
+        </div>
+        <div class="pub-tags">
+          <span class="tag tag-agent">agent</span>
+          <span class="tag tag-llm">llm</span>
+          <span class="tag tag-rec">memory</span>
+        </div>
+      </li>
       <li class="pub-item" data-tags="agent llm survey">
         <a href="https://arxiv.org/abs/2605.18747" class="pub-title" target="_blank" rel="noreferrer">Code as Agent Harness</a>
         <div class="pub-venue"><em>arXiv 2026</em></div>
