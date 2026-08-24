@@ -468,6 +468,52 @@
       margin-bottom: 20px;
     }
 
+    .pub-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .filter-btn {
+      padding: 6px 16px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-light);
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(44, 82, 130, 0.12);
+    }
+
+    .filter-btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .filter-btn.active {
+      color: #fff;
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 2px 8px rgba(44, 82, 130, 0.25);
+    }
+
+    .filter-count {
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 12px;
+      opacity: 0.75;
+    }
+
     .pub-list {
       list-style: none;
       padding: 0;
@@ -493,6 +539,11 @@
     .pub-item:hover {
       background: var(--bg-alt);
       transform: translateX(3px);
+    }
+
+    .pub-item.hidden,
+    .pub-section-header.hidden {
+      display: none;
     }
 
     .pub-title {
@@ -778,6 +829,8 @@
       nav .nav-links a { font-size: 13px; }
       .timeline-item, .news-item { align-items: flex-start; }
       .gallery-grid { grid-template-columns: 1fr; }
+      .pub-filter { gap: 6px; }
+      .filter-btn { padding: 5px 12px; font-size: 13px; }
       .hero-photo img {
         width: 280px;
         height: 360px;
@@ -932,9 +985,20 @@
     <h2 class="section-title">Selected Publications</h2>
     <p class="pub-note">Selected papers and preprints. See a fuller list on <a class="pub-link-inline" href="https://scholar.google.com/citations?user=-tpUy14AAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>.</p>
     <p class="pub-legend"> * denotes equal contribution.</p>
+    <div class="pub-filter" role="group" aria-label="Filter publications by category">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" type="button" data-filter="agent" aria-pressed="false">Agent</button>
+      <button class="filter-btn" type="button" data-filter="llm" aria-pressed="false">LLM</button>
+      <button class="filter-btn" type="button" data-filter="personalization" aria-pressed="false">Personalization</button>
+      <button class="filter-btn" type="button" data-filter="multimodal" aria-pressed="false">Multimodal</button>
+      <button class="filter-btn" type="button" data-filter="reasoning" aria-pressed="false">Reasoning</button>
+      <button class="filter-btn" type="button" data-filter="memory" aria-pressed="false">Memory</button>
+      <button class="filter-btn" type="button" data-filter="graph" aria-pressed="false">Graph</button>
+      <button class="filter-btn" type="button" data-filter="survey" aria-pressed="false">Survey</button>
+    </div>
     <ul class="pub-list">
       <li class="pub-section-header">2026</li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="agent llm survey">
         <a href="https://arxiv.org/abs/2605.18747" class="pub-title" target="_blank" rel="noreferrer">Code as Agent Harness</a>
         <div class="pub-venue"><em>arXiv 2026</em></div>
         <div class="pub-authors"><span class="me">Xuying Ning</span>, Katherine Tieu, Dongqi Fu, Tianxin Wei, Zihao Li, Yuanchen Bei, Jiaru Zou, Mengting Ai, Zhining Liu, Ting-Wei Li, Lingjie Chen, Yanjun Zhao, Ke Yang, Bingxuan Li, Cheng Qian, Gaotang Li, Xiao Lin, Zhichen Zeng, Ruizhong Qiu, Sirui Chen, Yifan Sun, Xiyuan Yang, Ruida Wang, Rui Pan, Chenyuan Yang, Dylan Zhang, Liri Fang, Zikun Cui, Yang Cao, Pan Chen, Dorothy Sun, Ren Chen, Mahesh Srinivasan, Nipun Mathur, Yinglong Xia, Hong Li, Hong Yan, Pan Lu, Lingming Zhang, Tong Zhang, Hanghang Tong, Jingrui He</div>
@@ -950,7 +1014,7 @@
           <span class="tag tag-survey">survey</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="agent multimodal reasoning">
         <a href="https://arxiv.org/abs/2603.00873" class="pub-title" target="_blank" rel="noreferrer">MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains</a>
         <div class="pub-venue"><em>ICLR 2026</em> <span class="oral">Oral (Top 1%)</span></div>
         <div class="pub-authors"><span class="me">Xuying Ning*</span>, Dongqi Fu*, Tianxin Wei*, Mengting Ai, Jiaru Zou, Ting-Wei Li, Hanghang Tong, Yada Zhu, Hendrik Hamann, Jingrui He</div>
@@ -965,7 +1029,7 @@
           <span class="tag tag-llm">llm</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="agent personalization memory">
         <a href="https://arxiv.org/abs/2511.20857" class="pub-title" target="_blank" rel="noreferrer">Evo-Memory: Benchmarking LLM Agent Test-time Learning with Self-Evolving Memory</a>
         <div class="pub-venue"><em>arXiv 2025</em></div>
         <div class="pub-authors">Tianxin Wei, Noveen Sachdeva, Benjamin Coleman, Zhankui He, Yuarchen Bei, <span class="me">Xuying Ning</span>, Mengting Ai, Yunzhe Li, Jingrui He, Ed H. Chi, Chi Wang, Shuo Chen, Fernando Pereira, Wang-Cheng Kang, Derek Zhiyuan Cheng</div>
@@ -979,7 +1043,7 @@
           <span class="tag tag-rec">memory</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="agent multimodal personalization memory">
         <a href="https://arxiv.org/abs/2601.03515" class="pub-title" target="_blank" rel="noreferrer">Mem-Gallery: Benchmarking Multimodal Long-Term Conversational Memory for MLLM Agents</a>
         <div class="pub-venue"><em>ACL 2026 Main</em></div>
         <div class="pub-authors">Yuanchen Bei, Tianxin Wei, <span class="me">Xuying Ning</span>, Yanjun Zhao, Zhining Liu, Xiao Lin, Yada Zhu, Hendrik Hamann, Jingrui He, Hanghang Tong</div>
@@ -994,7 +1058,7 @@
           <span class="tag tag-rec">memory</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="agent multimodal reasoning">
         <a href="https://aclanthology.org/2026.findings-acl.879/" class="pub-title" target="_blank" rel="noreferrer">PaperMind: Benchmarking Agentic Reasoning and Critique over Scientific Papers in Multimodal LLMs</a>
         <div class="pub-venue"><em>ACL 2026 Findings</em></div>
         <div class="pub-authors">Yanjun Zhao*, Tianxin Wei, Jiaru Zou, <span class="me">Xuying Ning</span>, Yuanchen Bei, Lingjie Chen, Simmi Rana, Wendy H. Yang, Hanghang Tong, Jingrui He</div>
@@ -1008,7 +1072,7 @@
           <span class="tag tag-multimodal">multimodal</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="llm reasoning">
         <a href="https://arxiv.org/abs/2601.06022" class="pub-title" target="_blank" rel="noreferrer">AdaFuse: Adaptive Ensemble Decoding with Test-Time Scaling for LLMs</a>
         <div class="pub-venue"><em>ACL 2026 Main</em></div>
         <div class="pub-authors">Chengming Cui*, Tianxin Wei, Ziyi Chen, Ruizhong Qiu, Zhichen Zeng, Zhining Liu, <span class="me">Xuying Ning</span>, Duo Zhou, Jingrui He</div>
@@ -1022,7 +1086,7 @@
           <span class="tag tag-agent">reasoning</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="llm personalization">
         <a href="https://www.arxiv.org/abs/2511.22707" class="pub-title" target="_blank" rel="noreferrer">CoFiRec: Coarse-to-Fine Tokenization for Generative Recommendation</a>
         <div class="pub-venue"><em>RecSys 2026</em></div>
         <div class="pub-authors">Tianxin Wei*, <span class="me">Xuying Ning*</span>, Xuxing Chen, Ruizhong Qiu, Yupeng Hou, Yan Xie, Shuang Yang, Zhigang Hua, Jingrui He</div>
@@ -1038,7 +1102,7 @@
       </li>
 
       <li class="pub-section-header">2025</li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="llm multimodal graph">
         <a href="https://openreview.net/forum?id=FB2e8PV6qg" class="pub-title" target="_blank" rel="noreferrer">Graph4MM: Weaving Multimodal Learning with Structural Information</a>
         <div class="pub-venue"><em>ICML 2025</em></div>
         <div class="pub-authors"><span class="me">Xuying Ning</span>, Dongqi Fu, Tianxin Wei, Wujiang Xu, Jingrui He</div>
@@ -1052,7 +1116,7 @@
           <span class="tag tag-graph">graph</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="personalization">
         <a href="https://arxiv.org/abs/2405.20710" class="pub-title" target="_blank" rel="noreferrer">I&sup2;VAE: Interest Information Augmentation with Variational Regularizers for Cross-Domain Sequential Recommendation</a>
         <div class="pub-venue"><em>UAI 2025</em></div>
         <div class="pub-authors"><span class="me">Xuying Ning</span>, Wujiang Xu, Tianxin Wei, Xiaolei Liu</div>
@@ -1065,7 +1129,7 @@
           <span class="tag tag-rec">recommendation</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="llm reasoning">
         <a href="https://aclanthology.org/2025.emnlp-main.570/" class="pub-title" target="_blank" rel="noreferrer">AlphaOne: Reasoning Models Thinking Slow and Fast at Test Time</a>
         <div class="pub-venue"><em>EMNLP 2025 Main</em></div>
         <div class="pub-authors">Junyu Zhang, Runpei Dong, Han Wang, <span class="me">Xuying Ning</span>, Haoran Geng, Peihao Li, Xialin He, Yutong Bai, Jitendra Malik, Saurabh Gupta, Huan Zhang</div>
@@ -1079,7 +1143,7 @@
           <span class="tag tag-agent">reasoning</span>
         </div>
       </li>
-      <li class="pub-item">
+      <li class="pub-item" data-tags="llm personalization">
         <a href="https://openreview.net/forum?id=xyYbN8Q45Y" class="pub-title" target="_blank" rel="noreferrer">SLMRec: Empowering Small Language Models for Sequential Recommendation</a>
         <div class="pub-venue"><em>ICLR 2025</em></div>
         <div class="pub-authors">Wujiang Xu, Qitian Wu, Zujie Liang, Jiaojiao Han, <span class="me">Xuying Ning</span>, Wenfang Lin, Linxun Chen, Feng Wei, Yongfeng Zhang</div>
@@ -1199,6 +1263,43 @@
       if (link.getAttribute('href') === '#' + current) {
         link.classList.add('active');
       }
+    });
+  });
+
+  const publicationFilterButtons = document.querySelectorAll('.filter-btn');
+  const publicationItems = document.querySelectorAll('.pub-item');
+  const publicationYearHeaders = document.querySelectorAll('.pub-section-header');
+
+  publicationFilterButtons.forEach(button => {
+    const filter = button.dataset.filter;
+    const count = filter === 'all'
+      ? publicationItems.length
+      : Array.from(publicationItems).filter(item => item.dataset.tags.split(' ').includes(filter)).length;
+    const countLabel = document.createElement('span');
+    countLabel.className = 'filter-count';
+    countLabel.textContent = `(${count})`;
+    button.appendChild(countLabel);
+  });
+
+  function updatePublicationFilter(filter) {
+    publicationItems.forEach(item => {
+      const matches = filter === 'all' || item.dataset.tags.split(' ').includes(filter);
+      item.classList.toggle('hidden', !matches);
+    });
+
+    publicationYearHeaders.forEach(header => {
+      header.classList.toggle('hidden', filter !== 'all');
+    });
+  }
+
+  publicationFilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      publicationFilterButtons.forEach(filterButton => {
+        const isActive = filterButton === button;
+        filterButton.classList.toggle('active', isActive);
+        filterButton.setAttribute('aria-pressed', String(isActive));
+      });
+      updatePublicationFilter(button.dataset.filter);
     });
   });
 </script>
